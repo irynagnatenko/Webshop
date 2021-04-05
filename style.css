@@ -1,0 +1,17 @@
+div {
+  margin: 5px;
+  display: inline-block;
+}
+
+#button {
+  cursor: pointer;
+}
+
+/* CSS to shorten the description of the product
+*/
+.description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}

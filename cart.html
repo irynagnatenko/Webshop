@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Form</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="shop.png">Webshop</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarColor01"
+        aria-controls="navbarColor01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">Cart</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Order confirmation-->
+    <div class="card border-success mb-3" style="max-width: 80 rem">
+      <div class="card-header text-success">
+        <strong>Please confirm your order</strong>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr class="table-success">
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th id="total">Total price</th>
+            </tr>
+          </thead>
+          <tbody id="productsInCart"></tbody>
+        </table>
+
+        <button
+          type="submit"
+          id="empty-cart"
+          class="btn btn-outline-danger"
+          onclick="emptyCart()"
+        >
+          Empty Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Form to fill in-->
+    <div class="card border-success mb-3" style="max-width: 30rem">
+      <form class="needs-validation" novalidate>
+        <fieldset>
+          <div class="card-header text-success">
+            <strong>Customer Information</strong>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="name">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Enter your name"
+                required
+              />
+              <div class="invalid-feedback">Please enter your first name</div>
+            </div>
+            <br />
+            <div class="form-group">
+              <label for="name">Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="lastname"
+                placeholder="Enter your last name"
+                required
+              />
+              <div class="invalid-feedback">Please enter your last name</div>
+            </div>
+            <br />
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Enter your email"
+                required
+              />
+              <small id="emailHelp" class="form-text text-muted"
+                >We'll never share your email with anyone else.</small
+              >
+              <div class="invalid-feedback">
+                Please enter your correct email (your@mail.com)
+              </div>
+            </div>
+            <br />
+            <div class="form-group">
+              <label for="address">Delivery Adress</label>
+              <input
+                type="text"
+                class="form-control"
+                id="address"
+                placeholder="Enter your address"
+                required
+              />
+              <div class="invalid-feedback">Please enter your adress</div>
+            </div>
+            <br />
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="text"
+                class="form-control"
+                id="phone"
+                placeholder="Enter your phone number"
+                required
+              />
+              <div class="invalid-feedback">Please enter your phone number</div>
+            </div>
+            <br />
+            <div>
+              <button
+                type="submit"
+                id="submitOrder"
+                class="btn btn-outline-success"
+              >
+                Send Order
+              </button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <!--end form-->
+
+    <script src="validate.js" defer></script>
+    <script src="cart.js"></script>
+    <script>
+      renderCart();
+    </script>
+  </body>
+</html>
