@@ -1,6 +1,6 @@
 let productsIn = [];
 
-// check localStorage and initialize the content of the productsIn by sending the key "cartItems"
+// check localStorage and initialize the content of the cartContent by sending the key "cartItems"
 let cartContent = localStorage.getItem("cartItems");
 if (cartContent) {
   productCart = JSON.parse(cartContent);
@@ -98,7 +98,7 @@ function renderCart() {
           element.id
         })">-</button>
         </td>
-        <td id="${element.id}">${(element.price * element.quantity).toFixed(
+        <td id="total">${(element.price * element.quantity).toFixed(
       2
     )} $</td> 
     
